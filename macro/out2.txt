@@ -1,2 +1,0 @@
-PRG2        START
-            USING                   *,BASE
