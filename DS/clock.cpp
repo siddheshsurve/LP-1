@@ -91,29 +91,35 @@ void lamportLogicalClock(int e1, int e2, int m[5][3])
 int main() 
 { 
     int cho; 
-    string ss, a, b; 
+    string ss, a, b;
     while (true) 
     { 
         cout << "\n1.Lamport's Clock\n2.NTP\nEnter simulation to check: "; 
         cin >> cho; 
         int e1 = 5, e2 = 3, m[5][3]; 
-        m[0][0] = 0; 
-        m[0][1] = 0; 
-        m[0][2] = 0; 
-        m[1][0] = 0; 
-        m[1][1] = 0; 
-        m[1][2] = 1; 
-        m[2][0] = 0; 
-        m[2][1] = 0; 
-        m[2][2] = 0; 
-        m[3][0] = 0; 
-        m[3][1] = 0; 
-        m[3][2] = 0; 
-        m[4][0] = 0; 
-        m[4][1] = -1; 
-        m[4][2] = 0; 
+        // m[0][0] = 0; 
+        // m[0][1] = 0; 
+        // m[0][2] = 0; 
+        // m[1][0] = 0; 
+        // m[1][1] = 0; 
+        // m[1][2] = 1; 
+        // m[2][0] = 0; 
+        // m[2][1] = 0; 
+        // m[2][2] = 0; 
+        // m[3][0] = 0; 
+        // m[3][1] = 0; 
+        // m[3][2] = 0; 
+        // m[4][0] = 0; 
+        // m[4][1] = -1; 
+        // m[4][2] = 0;
+        for(int i=0; i<5; i++) {
+            for(int j=0; j<3; j++) {
+                cout<<"m["<<i<<"]["<<j<<"] = "; 
+                cin>>m[i][j];
+            }
+        }
         if (cho == 1) 
-            lamportLogicalClock(e1, e2, m); 
+            lamportLogicalClock(e1, e2, m);
         if (cho == 2) 
         { 
             cout << "Enter UTC time in HH:MM format: "; 
@@ -130,7 +136,8 @@ int main()
                 b += ss[i]; 
                 i++; 
             } 
-            NTP(a, b); 
+            NTP(a, b);
+            break;
         } 
     } 
     return 0; 
